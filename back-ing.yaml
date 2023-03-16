@@ -8,6 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: instance
     alb.ingress.kubernetes.io/group.name: eks-demo-group
     alb.ingress.kubernetes.io/group.order: '1'
+    alb.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
