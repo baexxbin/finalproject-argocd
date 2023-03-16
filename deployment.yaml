@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: testapp
-        image: nginx:alpine
+        image: suhwan11/hello-world:49
         ports:
         - containerPort: 80
           protocol: TCP
