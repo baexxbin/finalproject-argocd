@@ -3,10 +3,11 @@ kind: Ingress
 metadata:
   name: back-ing
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/group.name: eks-demo-group
+    alb.ingress.kubernetes.io/group.order: '1'
 spec:
   rules:
   - http:
