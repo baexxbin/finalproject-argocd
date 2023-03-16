@@ -11,7 +11,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: / 
+        path: /back 
         backend: 
           service:
             name: back-svc
