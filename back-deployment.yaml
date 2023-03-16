@@ -13,7 +13,7 @@ spec:
         tier: backend
     spec:
       containers:
-      - name: backapp
+      - name: back-app
         image: suhwan11/hello-world:49
         ports:
         - containerPort: 8080

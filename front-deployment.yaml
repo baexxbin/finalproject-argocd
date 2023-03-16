@@ -14,7 +14,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: frontapp
+      - name: front-app
         image: nginx:alpine
         ports:
         - containerPort: 80
