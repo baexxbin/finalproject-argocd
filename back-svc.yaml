@@ -4,7 +4,7 @@ metadata:
   name: test
 spec:
   selector:
-    testapp: v1
+    tier: backend
   ports:
   - port: 80
     targetPort: 8080

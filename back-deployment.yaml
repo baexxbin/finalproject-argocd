@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-app
+  name: back-deploy
 spec:
   selector:
     matchLabels:
-      testapp: v1
+      tier: backend
   replicas: 2
   template:
     metadata:
       labels:
-        testapp: v1
+        tier: backend
     spec:
       containers:
-      - name: testapp
+      - name: backapp
         image: suhwan11/hello-world:49
         ports:
         - containerPort: 8080
