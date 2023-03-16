@@ -13,10 +13,10 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: /
+        path: /back
         backend: 
           service:
             name: back-svc
             port:
-              number: 8080
+              number: 80
         
