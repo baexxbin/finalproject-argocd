@@ -12,12 +12,19 @@ spec:
       labels:
         tier: backend
     spec:
+      volumes:
+      - name: efs-volume
+        persistentVolumeClaim:
+          claimName: efs-pvc
       containers:
       - name: back-app
         image: suhwan11/hello-world:49
         ports:
         - containerPort: 8080
           protocol: TCP
+        volumeMounts:
+        - name: efs-volume
+          mountPath: /data
         resources:
           requests:
             cpu: 200m
