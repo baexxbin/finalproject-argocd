@@ -5,7 +5,7 @@ metadata:
 parameters:
   directoryPerms: "700"
   fileSystemId: fs-07b34570f35c4cc5d
-  provisioningMode: efs-csi
+  provisioningMode: efs-ap
 provisioner: efs.csi.aws.com
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
