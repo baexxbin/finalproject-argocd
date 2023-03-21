@@ -29,17 +29,3 @@ spec:
           requests:
             cpu: 200m
             memory: 200M
-        livenessProbe:
-          httpGet:
-            port: 8080
-            path: /healthz
-        startupProbe:
-          httpGet:
-            port: 8080
-            path: /healthz
-        readinessProbe:
-          httpGet:
-            port: 8080
-            path: /healthz
-
-
