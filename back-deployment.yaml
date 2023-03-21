@@ -32,14 +32,14 @@ spec:
         livenessProbe:
           httpGet:
             port: 8080
-            path: /health
+            path: /
         startupProbe:
           httpGet:
             port: 8080
-            path: /health
+            path: /
         readinessProbe:
           httpGet:
             port: 8080
-            path: /health
+            path: /
 
 
