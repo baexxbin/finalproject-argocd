@@ -31,15 +31,15 @@ spec:
             memory: 200M
         livenessProbe:
           httpGet:
-            ports: 8080
-            path: /
+            port: 8080
+            path: /health
         startupProbe:
           httpGet:
-            ports: 8080
-            path: /
+            port: 8080
+            path: /health
         readinessProbe:
           httpGet:
-            ports: 8080
-            path: /
+            port: 8080
+            path: /health
 
 
