@@ -7,6 +7,8 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: instance
 spec:
+  tls:
+  - secretName: front-ing-secret
   rules:
   - host: "k8s-finalproject.com" 
     http:
