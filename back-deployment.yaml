@@ -29,3 +29,13 @@ spec:
           requests:
             cpu: 200m
             memory: 200M
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: tier
+                operator: In
+                values:
+                - backend
+            topologyKey: "kubernetes.io/hostname"
