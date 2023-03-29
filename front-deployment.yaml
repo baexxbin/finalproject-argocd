@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: front-app
-        image: oldhamster/vue-project-v1:latest
+        image: suhwan11/frontend:testv1
         ports:
         - containerPort: 80
           protocol: TCP
