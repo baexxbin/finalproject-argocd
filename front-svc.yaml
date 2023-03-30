@@ -8,5 +8,7 @@ spec:
   - port: 80
     targetPort: 80
     nodePort: 31112
+  - port: 443
+    targetPort: 80
   selector: 
     tier: frontend
