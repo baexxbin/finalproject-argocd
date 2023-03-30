@@ -7,6 +7,12 @@ spec:
   selector:
     matchLabels:
       tier: frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
+    minReadyseconds: 20
   template:
     metadata:
       name: front-deploy

@@ -3,6 +3,12 @@ kind: Deployment
 metadata:
   name: back-deploy
 spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
+  minReadySeconds: 20
   selector:
     matchLabels:
       tier: backend
