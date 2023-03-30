@@ -10,5 +10,6 @@ spec:
     nodePort: 31112
   - port: 443
     targetPort: 80
+    nodePort: 31113
   selector: 
     tier: frontend
