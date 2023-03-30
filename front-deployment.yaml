@@ -23,7 +23,7 @@ spec:
       - name: front-app
         image: suhwan11/frontend:testv3
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           protocol: TCP
       affinity:
         podAntiAffinity:
