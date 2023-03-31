@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: front-app
-        image: suhwan11/frontend:testv10
+        image: suhwan11/frontend:testv11
         ports:
         - containerPort: 80
           protocol: TCP
