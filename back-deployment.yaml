@@ -24,7 +24,7 @@ spec:
           claimName: efs-pvc
       containers:
       - name: back-app
-        image: suhwan11/backend:21
+        image: suhwan11/backend:20
         ports:
         - containerPort: 8080
           protocol: TCP
