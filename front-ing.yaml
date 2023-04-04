@@ -14,6 +14,13 @@ spec:
   - host: "k8s-finalproject.com" 
     http:
       paths:
+      - path: /manager
+        pathType: Prefix
+        backend:
+          service:
+            name: front-svc-admin
+            port:
+              number: 80
       - path: /
         pathType: Prefix
         backend:
