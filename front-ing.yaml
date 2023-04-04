@@ -18,14 +18,14 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: front-svc-admin
+            name: front-svc-user
             port:
               number: 80
       - path: /manager
         pathType: Prefix
         backend: 
           service:
-            name: front-svc-user
+            name: front-svc-admin
             port:
               number: 80
 

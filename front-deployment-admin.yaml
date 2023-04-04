@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: front-app-admin
-        image: suhwan11/frontend-admin:5
+        image: suhwan11/frontend-admin:2
         ports:
         - containerPort: 80
           protocol: TCP
