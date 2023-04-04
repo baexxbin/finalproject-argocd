@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: front-ing
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: instance
@@ -15,10 +14,11 @@ spec:
   - host: "k8s-finalproject.com" 
     http:
       paths:
-      - path: /manager
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: front-svc-admin
             port:
               number: 80
+
