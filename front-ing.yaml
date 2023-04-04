@@ -20,12 +20,12 @@ spec:
           service:
             name: front-svc-user
             port:
-              number: 3000
+              number: 80
       - path: /manager
         pathType: Prefix
         backend: 
           service:
             name: front-svc-admin
             port:
-              number: 4000
+              number: 80
 
