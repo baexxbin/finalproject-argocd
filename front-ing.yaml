@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: front-svc
+            name: front-svc-user
             port:
               number: 80
