@@ -13,18 +13,19 @@ spec:
   rules:
   - host: "k8s-finalproject.com" 
     http:
-    - path: /
-      pathType: Prefix
-      backend:
-        service:
-          name: front-svc-user
-          port:
-            number: 80
-    - path: /manager
-      pathType: Prefix
-      backend: 
-        service:
-          name: front-svc-admin
-          port:
-            number: 80
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: front-svc-user
+            port:
+              number: 80
+      - path: /manager
+        pathType: Prefix
+        backend: 
+          service:
+            name: front-svc-admin
+            port:
+              number: 80
 
