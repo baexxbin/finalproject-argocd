@@ -1,40 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: back-deploy
+  name: front-deploy-admin
 spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: frontend-admin
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 1
       maxSurge: 0
   minReadySeconds: 20
-  selector:
-    matchLabels:
-      tier: backend
-  replicas: 2
   template:
     metadata:
+      name: front-deploy-admin
       labels:
-        tier: backend
+        tier: frontend-admin
     spec:
-      volumes:
-      - name: efs-volume
-        persistentVolumeClaim:
-          claimName: efs-pvc
       containers:
-      - name: back-app
-        image: suhwan11/backend:7
+      - name: front-app-admin
+        image: suhwan11/frontend-admin:9
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           protocol: TCP
-        volumeMounts:
-        - name: efs-volume
-          mountPath: /data
-        resources:
-          requests:
-            cpu: 200m
-            memory: 200M
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -43,5 +33,15 @@ spec:
               - key: tier
                 operator: In
                 values:
+                - frontend-admin
+            topologyKey: "kubernetes.io/hostname"
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: tier
+                operator: In
+                values:
                 - backend
             topologyKey: "kubernetes.io/hostname"
+

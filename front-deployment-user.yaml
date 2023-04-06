@@ -1,21 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-deploy
+  name: front-deploy-user
 spec:
   replicas: 2
   selector:
     matchLabels:
-      tier: frontend
+      tier: frontend-user
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
+  minReadySeconds: 20
   template:
     metadata:
-      name: front-deploy
+      name: front-deploy-user
       labels:
-        tier: frontend
+        tier: frontend-user
     spec:
       containers:
-      - name: front-app
-        image: oldhamster/vue-project-v1:latest
+      - name: front-app-user
+        image: suhwan11/frontend-user:13
         ports:
         - containerPort: 80
           protocol: TCP
@@ -27,7 +33,7 @@ spec:
               - key: tier
                 operator: In
                 values:
-                - frontend
+                - frontend-user
             topologyKey: "kubernetes.io/hostname"
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
