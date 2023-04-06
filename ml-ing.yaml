@@ -16,4 +16,4 @@ spec:
           service:
             name: ml-svc
             port:
-              number: 5000
+              number: 80
