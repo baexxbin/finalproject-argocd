@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ml-deploy
-        image: suhwan11/test1:flaskv2
+        image: suhwan11/backend-ml:flaskv1
         ports:
         - containerPort: 5000
 
